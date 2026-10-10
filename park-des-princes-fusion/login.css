@@ -1,0 +1,340 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/login_background.png');
+    backdrop-filter: blur(0px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+
+.cadrLogin {
+    background-color: rgba(72, 60, 90, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+    border-radius: 20px; 
+    position: relative;
+    overflow: hidden; 
+    width: 70%; 
+    height: 70%;
+    max-width: 100%;
+    min-height: 480px;
+}
+.formLogin {
+    background-color: rgba(72, 60, 90, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 50%; 
+    height: 100%;
+    opacity: 0; 
+    z-index: 1;
+    transition: all 0.6s ease-in-out;
+}
+.error-box{
+    
+    border:solid;
+    border-radius: 5px;
+    border-color: rgba(255, 0, 0, 0.4);
+    background-color: rgba(255, 0, 0, 0.4);
+    position: absolute;
+    top: 10%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 50%;
+    min-height: 40px; 
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 10;
+}
+.error-text {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.logoLoginL{
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    width: 80px; 
+    height: auto; 
+    margin-bottom: 20px; 
+}
+.formLogin form {
+    
+    display: flex;
+    margin-top: 30%;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.formLogin h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+.formLogin input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    outline: none;
+    box-sizing: border-box; 
+}
+.formLogin button {
+    width: 50%; 
+    padding: 12px;
+    border-radius: 20px;
+
+    border: none;
+    background-color: #7a46ab; 
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px; 
+}
+
+/* ==========================form singhin======================================================================================= */
+
+
+.formSingin {
+    background-color: rgba(72, 60, 90, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 50%;
+    height: 100%; 
+    z-index: 2;
+    transition: all 0.6s ease-in-out; 
+}
+.logoLoginR{
+    position: absolute;
+    width: 80px;
+    right: 5%;
+    top: 5%; 
+    height: auto; 
+    margin-bottom: 20px; 
+}
+.form2 {
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+    align-items: center;
+}
+.formSingin h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+.form2 input {
+    width: 100%; 
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    outline: none; 
+    box-sizing: border-box;
+}
+.form2 button {
+    width: 50%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #7a46ab; 
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px; 
+}
+/* ==============================================overlayRight======================================================================= */
+
+.overlayRight {
+   background-image: url('img/R.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: solid 0%;
+    transition: all 0.6s ease-in-out; 
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%; 
+    right: 0; 
+}
+
+.overlayRight h1 {
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.overlayRight p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+button.ghost {
+    position:absolute;
+    bottom: 10%;
+    background-color: transparent; 
+    border: 2px solid #ffffff; 
+    color: #ffffff; 
+    border-radius: 20px;
+    padding: 12px 45px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* ================================================overlayLeft=========================================================================== */
+.overlayLeft {
+   background-image: url('img/L.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: solid 0%;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%; 
+    left: 0; 
+    
+}
+.overlayLeft h1 {
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.overlayLeft p {
+    font-size: 17px;
+    color: #ffffff;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+button.ghost {
+    position:absolute;
+    bottom: 10%;
+    background-color: transparent; 
+    border: 2px solid #ffffff; 
+    color: #ffffff; 
+    border-radius: 20px;
+    padding: 12px 45px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+/* ============================================HIDER====================================================================== */
+
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    width: 50%; 
+    height: 100%;
+    overflow: hidden; 
+    z-index: 100; 
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay {
+    position: relative;
+    left: -100%; 
+    height: 100%;
+    width: 200%; 
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+/* =======================================REACTION============================================================================ */
+
+
+.cadrLogin.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.cadrLogin.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+
+.cadrLogin.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+
+.cadrLogin.right-panel-active .formSingin {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+
+.cadrLogin.right-panel-active .formLogin {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+.cadrLogin.right-panel-active .overlayLeft {
+    transform: translateX(0);
+}
+
+.cadrLogin.right-panel-active .overlayRight {
+    transform: translateX(0);
+}

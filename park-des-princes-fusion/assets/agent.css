@@ -1,0 +1,111 @@
+/* =========================================================
+   ESPACE AGENT DE VENTE — styles complémentaires
+   (s'ajoute à style.css, ne modifie rien de l'existant)
+   ========================================================= */
+
+.mt-1 { margin-top: 1rem; }
+.mb-0 { margin-bottom: 0; }
+
+/* ----- En-tête agent : logo | menu sur UNE ligne | compte ----- */
+.agent-header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.agent-side { flex: 1 1 0; min-width: 0; }            /* même largeur à gauche et à droite -> menu centré */
+.agent-side--end { text-align: right; }
+.agent-header .nav-pill {
+    flex: 0 1 auto;
+    min-width: 0;
+    flex-wrap: nowrap;                                  /* jamais de retour à la ligne */
+    justify-content: flex-start;
+    gap: 0 clamp(0.9rem, 2vw, 2.2rem);
+    padding: 0.65rem clamp(1rem, 2vw, 2rem);
+    overflow-x: auto;                                   /* écran très étroit : défilement, toujours 1 ligne */
+    scrollbar-width: none;
+}
+.agent-header .nav-pill::-webkit-scrollbar { display: none; }
+.agent-header .nav-pill a { white-space: nowrap; }
+.agent-header .user-badge { max-width: 100%; }
+
+@media (max-width: 820px) {
+    .agent-header-inner { flex-wrap: wrap; }
+    .agent-side { flex: 1 1 auto; }
+    .agent-header .nav-pill { order: 3; flex: 1 1 100%; }
+}
+
+/* ----- Ligne de billet (type + prix + quantité) ----- */
+.ticket-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+.ticket-line:last-child { border-bottom: 0; }
+.ticket-name  { color: var(--white); font-weight: 600; }
+.ticket-info  { display: block; color: var(--muted); font-size: 0.8rem; }
+.ticket-qty   { display: flex; align-items: center; gap: 0.6rem; }
+.ticket-qty .form-control { width: 80px; text-align: center; padding: 0.55rem 0.4rem; }
+.ticket-sub   { min-width: 90px; text-align: right; color: var(--muted); font-size: 0.9rem; }
+
+/* ----- Récapitulatif / total ----- */
+.total-box {
+    padding: 1.2rem;
+    background: var(--box);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+    text-align: center;
+}
+.total-label { display: block; color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: .5px; }
+.total-value { display: block; margin-top: 0.3rem; color: var(--white); font-size: 2rem; font-weight: 700; }
+
+/* ----- Choix client ----- */
+.client-panel[hidden] { display: none; }
+.check-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.6rem; }
+.check-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.55rem 0.8rem;
+    background: var(--box);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.check-item input { accent-color: var(--primary-light); }
+
+/* ----- Code billet ----- */
+.code-billet {
+    font-family: Consolas, 'Courier New', monospace;
+    letter-spacing: 1px;
+    color: var(--primary-soft);
+    white-space: nowrap;
+}
+
+/* ----- Résultat de vérification ----- */
+.verdict {
+    padding: 1.5rem;
+    border: 2px solid;
+    border-radius: var(--radius);
+    text-align: center;
+}
+.verdict.is-ok     { border-color: var(--ok);     background: rgba(16, 185, 129, 0.10); }
+.verdict.is-warn   { border-color: var(--warn);   background: rgba(234, 179, 8, 0.10); }
+.verdict.is-danger { border-color: var(--danger); background: rgba(239, 68, 68, 0.10); }
+.verdict-titre { margin: 0 0 0.3rem; font-size: 1.8rem; font-weight: 700; }
+.verdict.is-ok .verdict-titre     { color: var(--ok); }
+.verdict.is-warn .verdict-titre   { color: var(--warn); }
+.verdict.is-danger .verdict-titre { color: var(--danger); }
+
+.search-big { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.search-big .form-control { flex: 1 1 260px; font-size: 1.1rem; text-transform: uppercase; }
+
+/* ----- Impression du reçu ----- */
+@media print {
+    .site-header, .no-print, .btn { display: none !important; }
+    body { background: #fff !important; color: #000 !important; }
+    .card, .table-wrap { background: #fff !important; border-color: #ccc !important; box-shadow: none !important; }
+    .table, .table td, .table th, .page-title, .box-value, h1, h2, h3 { color: #000 !important; }
+    .code-billet { color: #000 !important; }
+}
